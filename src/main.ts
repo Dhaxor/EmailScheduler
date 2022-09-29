@@ -1,13 +1,8 @@
 import { NestFactory } from '@nestjs/core';
-// import @nestjs-addons/in-memory-db to root module
-import { InMemoryDBModule } from '@nestjs-addons/in-memory-db';
-import { AuthModule } from './auth/auth.module';
+import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create({
-    imports: [InMemoryDBModule.forRoot()],
-    module: AuthModule,
-  });
+  const app = await NestFactory.create(AppModule);
   await app.listen(3000);
 }
 bootstrap();

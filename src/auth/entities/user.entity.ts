@@ -1,5 +1,10 @@
-import { InMemoryDBEntity } from '@nestjs-addons/in-memory-db';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { IsEmail } from 'class-validator';
+@Entity()
+export class UserEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-export interface UserEntity extends InMemoryDBEntity {
+  @Column()
   email: string;
 }

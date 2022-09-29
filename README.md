@@ -24,7 +24,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Simple Email Scheduler with Randomized Messages. This is a simple project that sends 10 random messages everything minute to a few email address without repetition and stops sending with it's up t0 10. This project is built with NestJS, Typescript, TypeORM and SQLite.
 
 ## Installation
 
@@ -44,6 +44,40 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+
+## Directions for use
+
+1. Create a .env file in the root directory of the project and add the following variables:
+
+````
+MAIL_HOST=
+MAIL_PORT=
+MAIL_USER=
+MAIL_PASS=
+````
+
+2. To Register via email, send a POST request to the following endpoint:
+
+````
+http://localhost:3000/auth/register
+
+with the following body:
+
+{
+    "email": "emperor@gmail.com",
+}
+
+````
+*Note: Also added a /auth/getAll endpoint to get all emails added to the database.
+
+3. To run the mail scheduler, send a POST request to the following endpoint:
+
+````
+http://localhost:3000/mailer/schedule
+
+````
+
 
 ## Test
 
