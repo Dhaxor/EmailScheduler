@@ -48,7 +48,7 @@ $ npm run start:prod
 
 ## Directions for use
 
-1. Create a .env file in the root directory of the project and add the following variables:
+1. Create a .env file in the root directory of the project and add the following variables. Update the values to your own.
 
 ````
 MAIL_HOST=
